@@ -5,7 +5,7 @@ API_VERSION = "2"
 SDK_VERSION = "python_1.0.0"
 
 #payLib request url
-API_URL = "https://api.payLib.cn"
+API_URL = "https://api.paysdk.cn"
 
 #支付、支付订单查询(指定id)
 URI_BILL = "rest/bill"

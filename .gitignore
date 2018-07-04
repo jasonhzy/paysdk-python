@@ -1,4 +1,4 @@
 .DS_Store
 **/.idea/
 sdk/dist/
-sdk/beecloud.egg-info
+sdk/paysdk.egg-info/

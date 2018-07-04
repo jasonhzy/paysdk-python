@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import sys, time, hashlib, requests, json, urllib
-from payLib.config import API_URL, API_VERSION, SDK_VERSION
+from paysdk.config import API_URL, API_VERSION, SDK_VERSION
 
 class Base:
     def __init__(self):

@@ -5,7 +5,7 @@ from os import path
 
 # sys.path.append(path.dirname(path.realpath(__file__)) + '/../')
 from flask import Flask, render_template, request, redirect
-from payLib.api import Api
+from paysdk.api import Api
 from common import *
 
 app = Flask(__name__, static_folder='static', template_folder='views')
@@ -32,12 +32,12 @@ def pay():
     # title UTF8编码格式，32个字节内，最长支持16个汉字
     bill["title"] = 'py ' + channel + u'支付测试'
     # 渠道类型:ALI_WEB 或 ALI_QRCODE 或 UN_WEB或JD_WAP或JD_WEB, BC_GATEWAY为京东、BC_WX_WAP、BC_ALI_WEB渠道时为必填, BC_ALI_WAP不支持此参数
-    bill["return_url"] = "https://payLib.cn"
+    bill["return_url"] = "https://paysdk.cn"
     '''
     选填 optional, 附加数据, eg: {"key1”:“value1”,“key2”:“value2”}
     用户自定义的参数，将会在webhook通知中原样返回，该字段主要用于商户携带订单的自定义数据
     '''
-    bill["optional"] = {'company' : 'payLib'}
+    bill["optional"] = {'company' : 'paysdk'}
 
     '''
     选填 订单失效时间bill_timeout
@@ -160,7 +160,7 @@ def pay():
     elif channel == 'PAYPAL_PAYPAL' : #Paypal网页
         bill['channel'] = 'PAYPAL_PAYPAL'
         # currency参数的对照表, 请参考:
-        # https:#github.com/payLib/payLib-rest-api/tree/master/international
+        # https:#github.com/paysdk/paysdk-rest-api/tree/master/international
         bill['currency'] = 'USD'
     elif channel == 'PAYPAL_CREDITCARD' : #Paypal信用卡
         bill['channel'] = 'PAYPAL_CREDITCARD'

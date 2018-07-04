@@ -23,7 +23,7 @@ setup(
     zip_safe=False,
     platforms='2.7, 3.4, 3.5, 3.6',
     classifiers=[
-        "Development Status :: 1.0.2",
+        "Development Status :: 1 - Planning",
         "Intended Audience :: Developers",
         "License :: OSI Approved :: MIT License",
         "Natural Language :: English",

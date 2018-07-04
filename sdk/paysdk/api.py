@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
-from payLib.config import *
-from payLib.base import Base
+from paysdk.config import *
+from paysdk.base import Base
 
 class Api(Base):
     def printResp(self, data):
