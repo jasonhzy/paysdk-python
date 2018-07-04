@@ -13,7 +13,7 @@ setup(
     keywords=['paysdk', 'python'],
     description="beecloud, make payment simpler",
     long_description=open('../README.md').read(),
-    version='1.0.2',
+    version='1.0.3',
     author='jasonhzy',
     author_email='jasonhzy@yeah.net',
     url='https://jasonhzy.github.io',
