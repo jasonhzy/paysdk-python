@@ -11,9 +11,9 @@ from setuptools import setup
 setup(
     name='paysdk',
     keywords=['paysdk', 'python'],
-    description="beecloud, make payment simpler",
-    long_description=open('../README.md').read(),
-    version='1.0.3',
+    description="paysdk, make payment simpler",
+    long_description=open('paysdk/readme').read(),
+    version='1.0.4',
     author='jasonhzy',
     author_email='jasonhzy@yeah.net',
     url='https://jasonhzy.github.io',
@@ -23,7 +23,7 @@ setup(
     zip_safe=False,
     platforms='2.7, 3.4, 3.5, 3.6',
     classifiers=[
-        "Development Status :: 1 - Planning",
+        # "Development Status :: 1 - Planning",
         "Intended Audience :: Developers",
         "License :: OSI Approved :: MIT License",
         "Natural Language :: English",
