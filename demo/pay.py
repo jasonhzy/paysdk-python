@@ -3,7 +3,7 @@
 import sys
 from os import path
 
-sys.path.append(path.dirname(path.realpath(__file__)) + '/../')
+# sys.path.append(path.dirname(path.realpath(__file__)) + '/../')
 from flask import Flask, render_template, request, redirect
 from payLib.api import Api
 from common import *
