@@ -1,4 +1,5 @@
 .DS_Store
 **/.idea/
 sdk/dist/
+sdk/build/
 sdk/paysdk.egg-info/
