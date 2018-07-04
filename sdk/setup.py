@@ -13,7 +13,7 @@ setup(
     keywords=['paysdk', 'python'],
     description="paysdk, make payment simpler",
     long_description=open('paysdk/readme').read(),
-    version='1.0.4',
+    version='1.0.6',
     author='jasonhzy',
     author_email='jasonhzy@yeah.net',
     url='https://jasonhzy.github.io',
@@ -35,5 +35,6 @@ setup(
         "Programming Language :: Python :: 3.4",
         "Programming Language :: Python :: 3.5",
         "Programming Language :: Python :: 3.6",
+        'Topic :: Software Development :: Libraries'
     ]
 )

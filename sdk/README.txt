@@ -25,3 +25,7 @@
     #pypi正式环境
     python setup.py sdist upload ／ python setup.py sdist upload -r pypi
 
+3.查看python的site-packages目录地址
+
+ python -c "from distutils.sysconfig import get_python_lib; print get_python_lib()"
+
