@@ -3,7 +3,7 @@
 import sys
 from os import path
 
-# sys.path.append(path.dirname(path.realpath(__file__)) + '/../')
+sys.path.append(path.dirname(path.realpath(__file__)) + '/../')
 from flask import Flask, render_template, request, redirect
 from paysdk.api import Api
 from common import *
@@ -221,15 +221,15 @@ def pay():
     try:
         result = apiClass.bill(bill)
         apiClass.printResp(result)
-        if result.has_key('url') and result['url']:
+        if 'url' in result and result['url']:
             return redirect(result['url'])
-        elif result.has_key('html') and result['html']:
+        elif 'html' in result and result['html']:
             return result['html']
-        elif result.has_key('code_url') and result['code_url']:
+        elif 'code_url' in result and result['code_url']:
             return redirect(result['code_url'])
-        elif result.has_key('credit_card_id') and result['credit_card_id']:
+        elif 'credit_card_id' in result and result['credit_card_id']:
             return result['credit_card_id']
-        elif result.has_key('id') and result['id']:
+        elif 'id' in result and result['id']:
             return result['id']
         else:
             return ''

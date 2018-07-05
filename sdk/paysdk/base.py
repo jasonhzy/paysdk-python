@@ -66,7 +66,7 @@ class Base:
             raise ValueError('%s is empty'.format(param))
 
         data['app_id'] = self.app_id
-        if (not data.has_key('timestamp')) or (not data['timestamp']):
+        if ('timestamp' not in data) or (not data['timestamp']):
             data["timestamp"] = self.getTimestamp()
         data["app_sign"] = self.getSign(data["app_id"], data["timestamp"], secret)
 
