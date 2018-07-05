@@ -32,13 +32,12 @@ def pay():
     # title UTF8编码格式，32个字节内，最长支持16个汉字
     bill["title"] = 'py ' + channel + u'支付测试'
     # 渠道类型:ALI_WEB 或 ALI_QRCODE 或 UN_WEB或JD_WAP或JD_WEB, BC_GATEWAY为京东、BC_WX_WAP、BC_ALI_WEB渠道时为必填, BC_ALI_WAP不支持此参数
-    bill["return_url"] = "https://paysdk.cn"
+    bill["return_url"] = "https://example.com"
     '''
     选填 optional, 附加数据, eg: {"key1”:“value1”,“key2”:“value2”}
     用户自定义的参数，将会在webhook通知中原样返回，该字段主要用于商户携带订单的自定义数据
     '''
     bill["optional"] = {'company' : 'paysdk'}
-
     '''
     选填 订单失效时间bill_timeout
     必须为非零正整数，单位为秒，建议最短失效时间间隔必须大于360秒
@@ -50,20 +49,17 @@ def pay():
     如果两者都设置了，则优先使用notify_url。配置时请结合自己的项目谨慎配置，具体请
     参考demo/webhook.php
     '''
-    # bill["notify_url"] = "https://beecloud.cn"
-
+    # bill["notify_url"] = "https://example.com"
     '''
     buyer_id选填
     商户为其用户分配的ID.可以是email、手机号、随机字符串等；最长64位；在商户自己系统内必须保证唯一。
     '''
     # bill["buyer_id"] = "xxxx"
-
     '''
     coupon_id string 选填 卡券id
     传入卡券id，下单时会自动扣除优惠金额再发起支付
     '''
     # bill["coupon_id"] = "xxxxxx"
-
     '''
     analysis选填, 分析数据
     用于统计分析的数据，将会在控制台的统计分析报表中展示，用户自愿上传。包括以下基本字段：
@@ -238,7 +234,7 @@ def pay():
         else:
             return ''
     except Exception as e:
-        return e.message
+        return str(e)
 
 @app.route('/bill/query')
 def billQuery():
@@ -278,7 +274,7 @@ def billQuery():
 
         return render_template('bills.tpl', type='bill', data=list['bills'], count=count['count'], title=title + u'支付')
     except Exception as e:
-        return e.message
+        return str(e)
 
 @app.route('/refund/query')
 def refundQuery():
@@ -317,7 +313,7 @@ def refundQuery():
 
         return render_template('bills.tpl', type='refund', data=list['refunds'], count=count['count'], title=title + u'退款')
     except Exception as e:
-        return e.message
+        return str(e)
 
 @app.route('/refund/status')
 def refundStatus(self):

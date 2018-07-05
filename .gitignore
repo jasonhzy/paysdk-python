@@ -1,5 +1,7 @@
 .DS_Store
 **/.idea/
+demo/__pycache__/
+paysdk/
 sdk/dist/
 sdk/build/
 sdk/paysdk.egg-info/

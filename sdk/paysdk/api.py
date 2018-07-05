@@ -6,7 +6,7 @@ from paysdk.base import Base
 class Api(Base):
     def printResp(self, data):
         if data['result_code'] > 0:
-            raise ValueError(data['errMsg'])
+            raise ValueError(data['errMsg'].encode('utf8'))
 
     def bill(self, data):
         self.getSdkVersion(data)
